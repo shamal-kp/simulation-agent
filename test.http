@@ -1,0 +1,8 @@
+@baseUrl = http://localhost:8087
+
+POST {{baseUrl}}/responses
+Content-Type: application/json
+
+{
+    "input": "Where is Seattle?"
+}

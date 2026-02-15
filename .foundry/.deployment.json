@@ -1,0 +1,8 @@
+{
+  "hostedAgentDeployOptions": {
+    "dockerContextPath": "/Users/viktorshamal/AIFoundryProjects/test-agent",
+    "dockerfilePath": "/Users/viktorshamal/AIFoundryProjects/test-agent/Dockerfile",
+    "cpu": "0.25",
+    "memory": "0.5Gi"
+  }
+}
