@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM python:3.11-slim
 
 WORKDIR /app
 
@@ -9,6 +9,9 @@ RUN if [ -f requirements.txt ]; then \
     else \
         echo "No requirements.txt found"; \
     fi
+
+# https://github.com/azure/azure-sdk-for-python/issues/44884
+RUN python patches/fix_otel_streaming.py
 
 EXPOSE 8088
 
