@@ -10,12 +10,6 @@ from agent_framework.azure import AzureAIAgentClient
 from azure.ai.agentserver.agentframework import from_agent_framework
 from azure.identity import DefaultAzureCredential
 
-AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
-MODEL_DEPLOYMENT_NAME = os.getenv("MODEL_DEPLOYMENT_NAME", "gpt-5.2-chat")
-PROJECT_ENDPOINT = os.getenv(
-    "PROJECT_ENDPOINT"
-)
-
 @tool
 def get_local_date_time(iana_timezone: str) -> str:
     """Get the current date and time for a given timezone."""
