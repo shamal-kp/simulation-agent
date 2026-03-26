@@ -1,2 +1,6 @@
-azure-ai-agentserver-agentframework==1.0.0b12
+azure-ai-agentserver-agentframework==1.0.0b16
+agent-framework-azure-ai
+agent-framework-ag-ui
+agent-framework-devui
 tzdata
+agent-dev-cli==0.0.1b260313

@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv(override=True)
 
-from agent_framework import ai_function, ChatAgent
+from agent_framework import tool, Agent
 from agent_framework.azure import AzureAIAgentClient
 from azure.ai.agentserver.agentframework import from_agent_framework
 from azure.identity import DefaultAzureCredential
@@ -16,7 +16,7 @@ PROJECT_ENDPOINT = os.getenv(
     "PROJECT_ENDPOINT"
 )
 
-@ai_function
+@tool
 def get_local_date_time(iana_timezone: str) -> str:
     """Get the current date and time for a given timezone."""
     try:
@@ -27,8 +27,8 @@ def get_local_date_time(iana_timezone: str) -> str:
         return f"Error: Unable to get time for timezone '{iana_timezone}'. {e}"
 
 
-agent = ChatAgent(
-    chat_client=AzureAIAgentClient(
+agent = Agent(
+    client=AzureAIAgentClient(
         credential=DefaultAzureCredential(),
     ),
     instructions=(
